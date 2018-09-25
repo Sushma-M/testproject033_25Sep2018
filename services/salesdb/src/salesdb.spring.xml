@@ -4,7 +4,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.testproject033.salesdb.controller,com.testproject033.salesdb.service,com.testproject033.salesdb.dao"/>
+    <context:component-scan base-package="com.salesdb.controller,com.salesdb.service,com.salesdb.dao"/>
     <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
@@ -40,7 +40,7 @@
 
     <bean id="salesdbSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="salesdbDataSource"/>
-        <property name="packagesToScan" value="com.testproject033.salesdb"/>
+        <property name="packagesToScan" value="com.salesdb"/>
         <property name="entityInterceptor" ref="salesdbEntityInterceptor"/>
         <property name="entityTypeFilters" ref="nonHistoryEntitiesFilter"/>
         <property name="mappingResources">

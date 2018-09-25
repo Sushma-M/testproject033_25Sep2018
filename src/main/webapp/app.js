@@ -1,17 +1,15 @@
-/*
- * Use Injector.get for Dependency Injection
- * eg: var $timeout = Injector.get('$timeout');
- */
-
 /* perform any action on the variables within this block(on-page-load) */
+
 App.onAppVariablesReady = function () {
     /*
      * variables can be accessed through 'App.Variables' property here
      * e.g. App.Variables.staticVariable1.getData()
      */
+
 };
 
 /* perform any action on session timeout here, e.g clearing some data, etc */
+
 App.onSessionTimeout = function () {
     /*
      * NOTE:
@@ -19,6 +17,7 @@ App.onSessionTimeout = function () {
      * if the same user logs in(through login dialog), app will retain its state
      * if a different user logs in, app will be reloaded and user is redirected to respective landing page configured in Security.
      */
+
 };
 
 /*
@@ -28,8 +27,9 @@ App.onSessionTimeout = function () {
  * activePageScope: scope of the page
  * $activePageEl  : page jQuery element
  */
-App.onPageReady = function(activePageName, activePageScope, $activePageEl) {
 
+App.onPageReady = function (activePageName, activePageScope, $activePageEl) {
+    App.onAppVariablesReady();
 };
 
 /*
@@ -41,6 +41,6 @@ App.onPageReady = function(activePageName, activePageScope, $activePageEl) {
  * xhrObj:      The xhrObject used to make the service call
  *              This object contains useful information like statusCode, url, request/response body.
  */
-App.onServiceError = function (source, errorMsg, xhrObj) {
 
-};
+App.onServiceError = function (source, errorMsg, xhrObj) {};
+
